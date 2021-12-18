@@ -1,6 +1,8 @@
-import Card from "./Card"
+import Card from "./Card";
+import  ReactDOM  from "react-dom"
 
-const Modal = (props) => {
+
+const ModalData  = (props) => {
     return (
         <div className="fixed z-10 overflow-y-auto top-0 w-full text-center pt-auto bg-transparent h-screen left-0 " id="modal">
         <div className="absolute flex justify-center self-center z-30 h-screen w-screen ">
@@ -14,5 +16,11 @@ const Modal = (props) => {
         </div>
     )
 }
-
+const Modal =(props) =>{
+    return (
+        <>
+        {ReactDOM.createPortal(<ModalData {...props}/>,document.getElementById('modalroot'))}
+        </>
+    )
+}
 export default Modal
