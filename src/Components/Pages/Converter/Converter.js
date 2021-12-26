@@ -2,27 +2,27 @@ import { useState } from "react";
 import Input from "../../UI/Input";
 import ConnectWallet from "../../Wallet/ConnectWallet";
 import Card from "../../UI/Card";
-import Modal from "../../UI/Modal";
+import useConverter from "../../../hooks/use-converter";
 
 const Converter = () => {
-  const [nep, setNep] = useState();
-  const [bnb, setBnb] = useState();
+  const {nep,bnb ,bnbUpdateHandle,nepUpdateHandle} = useConverter();
+  
   const [isOpen, setIsOpen] = useState(false);
 
-  const nepUpdateHandle = (e) => {
-    var bnbVal;
-    var nepVal = e.target.value;
-    bnbVal = (nepVal * 3).toFixed(2);
-    setNep(nepVal);
-    setBnb(bnbVal);
-  };
-  const bnbUpdateHandle = (e) => {
-    var nepVal;
-    var bnbVal = e.target.value;
-    nepVal = parseFloat(bnbVal / 3).toFixed(2);
-    setNep(nepVal);
-    setBnb(bnbVal);
-  };
+  // const nepUpdateHandle = (e) => {
+  //   var bnbVal;
+  //   var nepVal = e.target.value;
+  //   bnbVal = (nepVal * 3).toFixed(2);
+  //   setNep(nepVal);
+  //   setBnb(bnbVal);
+  // };
+  // const bnbUpdateHandle = (e) => {
+  //   var nepVal;
+  //   var bnbVal = e.target.value;
+  //   nepVal = parseFloat(bnbVal / 3).toFixed(2);
+  //   setNep(nepVal);
+  //   setBnb(bnbVal);
+  // };
   const closeHandle =()=>{
     setIsOpen(false)
   }
