@@ -6,23 +6,7 @@ import useConverter from "../../../hooks/use-converter";
 
 const Converter = () => {
   const {nep,bnb ,bnbUpdateHandle,nepUpdateHandle} = useConverter();
-  
   const [isOpen, setIsOpen] = useState(false);
-
-  // const nepUpdateHandle = (e) => {
-  //   var bnbVal;
-  //   var nepVal = e.target.value;
-  //   bnbVal = (nepVal * 3).toFixed(2);
-  //   setNep(nepVal);
-  //   setBnb(bnbVal);
-  // };
-  // const bnbUpdateHandle = (e) => {
-  //   var nepVal;
-  //   var bnbVal = e.target.value;
-  //   nepVal = parseFloat(bnbVal / 3).toFixed(2);
-  //   setNep(nepVal);
-  //   setBnb(bnbVal);
-  // };
   const closeHandle =()=>{
     setIsOpen(false)
   }

@@ -1,6 +1,5 @@
 import Card from "./Card";
-import  ReactDOM  from "react-dom"
-
+import  ReactDOM  from "react-dom";
 
 const ModalData  = (props) => {
     return (
@@ -8,11 +7,8 @@ const ModalData  = (props) => {
         <div className="absolute flex justify-center self-center z-30 h-screen w-screen ">
         {props.children}  
          </div>
-         <div className="fixed z-0 w-screen h-screen bg-primaryColor opacity-80 ">
-         
-         </div>
-
-             
+         <div className="fixed z-0 w-screen h-screen bg-primaryColor opacity-80 ">         
+         </div>          
         </div>
     )
 }
