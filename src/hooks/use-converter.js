@@ -1,9 +1,8 @@
 import {useState} from 'react';
-
 const useConverter=()=>{
     const [nep, setNep] = useState();
     const [bnb, setBnb] = useState();
-  
+    
     const nepUpdateHandle = (e) => {
       var bnbVal;
       var nepVal = e.target.value;

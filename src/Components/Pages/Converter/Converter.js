@@ -3,6 +3,7 @@ import Input from "../../UI/Input";
 import ConnectWallet from "../../Wallet/ConnectWallet";
 import Card from "../../UI/Card";
 import useConverter from "../../../hooks/use-converter";
+import DropDown from "../../UI/DropDown";
 
 const Converter = () => {
   const {nep,bnb ,bnbUpdateHandle,nepUpdateHandle} = useConverter();
@@ -10,6 +11,7 @@ const Converter = () => {
   const closeHandle =()=>{
     setIsOpen(false)
   }
+  let val =["hello","how are you"]
   return (
     // <div className="py-10 bg-primaryColor w-1/2 h-2/3 flex text-center flex-col">
     <>
@@ -17,6 +19,8 @@ const Converter = () => {
         
       <div className=" w-60 md:w-96 mx-4 h-80 text-center">
         <h2 className=" font-semibold text-2xl ">Crypto Converter</h2>
+        <div className="mt-8">
+        <DropDown values={val} classes=" text-left"/>
         <Input
           type="text"
           title="NEP"
@@ -25,6 +29,7 @@ const Converter = () => {
           val={nep}
           onChangeHandle={nepUpdateHandle}
         />
+         <DropDown values={val} classes=" text-left"/>
         <Input
           type="text"
           title="BNB"
@@ -33,7 +38,7 @@ const Converter = () => {
           val={bnb}
           onChangeHandle={bnbUpdateHandle}
         />
-
+</div>
         <p style={{ color: "blue", cursor: "pointer" }} onClick={( ) => {setIsOpen(true)}}>
           {" "}
           Check Wallet Detail
